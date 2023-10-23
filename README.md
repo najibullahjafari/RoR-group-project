@@ -34,7 +34,8 @@
 
 # 📖 Blog App <a name="about-project"></a>
 
-**Blog in Rails App** empowers the end-users to start a new blog-post, comment and like existing content.
+**Ruby on Rails group project** 
+The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -88,8 +89,7 @@ first at all, install rails:
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
-git@github.com/najibullahjafari/ruby_social_media.git
+git clone https://github.com/najibullahjafari/RoR-group-project.git
 ```
 
 ### Install
@@ -97,7 +97,6 @@ git@github.com/najibullahjafari/ruby_social_media.git
 Install this project with:
 
 ```sh
-  cd blog-app
   bundle install
 ```
 
@@ -265,7 +264,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/najibullahjafari/ruby_social_media/issues).
+Feel free to check the [issues page](https://github.com/najibullahjafari/RoR-group-project.git/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
