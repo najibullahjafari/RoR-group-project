@@ -221,7 +221,11 @@ You can deploy this project using:
 - Twitter: [Najibullah_jafari](https://twitter.com/Najib_Jafari_)
 - LinkedIn: [Najibullah_jafari](https://www.linkedin.com/in/najibullahjafari/)
 
-👤 **Fatima Masuma Jaffery**
+👤 **Syeda Masuma Fatima**
+
+- GitHub: [@MasumaJaffery](https://github.com/MasumaJaffery)
+- Twitter: [@MasumaJaffery](https://twitter.com/MasumaJaffery)
+- LinkedIn: [Masuma Jaffery](https://www.linkedin.com/in/masuma-jaffery-797a29256/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
