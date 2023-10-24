@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-    # ... other code
+    devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   end
   

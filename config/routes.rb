@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'home#index'
+
+  devise_scope :user do
+    authenticated :user do
+      root to: "home#index", as: :authenticated_root
+    end
+
+    unauthenticated do
+      root to: "devise/sessions#new", as: :unauthenticated_root
+    end
+  end
+
+  resources :foods
+  resources :recipes
+
+  get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'
+  get 'public_recipes', to: 'recipes#public_recipes', as: 'public_recipes'
 end
