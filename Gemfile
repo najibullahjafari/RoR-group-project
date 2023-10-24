@@ -53,18 +53,18 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   # Add RSpec for testing
-  gem 'factory_bot_rails'
   gem 'devise'
+  gem 'factory_bot_rails'
 
   # Add gem for controller Testing.
   gem 'active_model_serializers'
   gem 'bogus'
   gem 'cancancan'
   gem 'faker'
-  gem 'rswag'
   gem 'rails-controller-testing'
   gem 'regexp_parser', '2.8.1'
   gem 'rspec-rails', '~> 5.0'
+  gem 'rswag'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false
   gem 'webdrivers'
