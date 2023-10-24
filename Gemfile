@@ -54,11 +54,12 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   # Add RSpec for testing
   gem 'factory_bot_rails'
+  gem 'devise'
+
   # Add gem for controller Testing.
   gem 'active_model_serializers'
   gem 'bogus'
   gem 'cancancan'
-  gem 'devise'
   gem 'faker'
   gem 'rswag'
   gem 'rails-controller-testing'
