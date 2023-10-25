@@ -1,0 +1,22 @@
+<%= form_with(model: @food, local: true, class: 'my-3') do |form| %>
+  <h2 class="mb-3">Add Food</h2>
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :measurement_unit %>
+    <%= form.select :measurement_unit, [['Unit', 1], ['Grams', 2], ['Kilograms', 3], ['Milliliters', 4], ['Liters', 5]], {}, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.text_field :price, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :quantity %>
+    <%= form.text_field :quantity, class: 'form-control' %>
+  </div>
+  <div class="text-center">
+    <%= form.submit 'Add Food', class: 'btn btn-primary' %>
+  </div>
+<% end %>
