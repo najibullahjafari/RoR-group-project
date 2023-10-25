@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root to: "home#index", as: :authenticated_root
+      root to: "recipes#index", as: :authenticated_root
     end
 
     unauthenticated do
@@ -11,15 +11,9 @@ Rails.application.routes.draw do
     end
   end
 
-  # config/routes.rb
+  resources :foods
+  resources :recipes, only: [:index, :create, :destroy]
+  
 
-    resources :foods
-
-
-
-
-  resources :recipes
-
-  get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'
-  get 'public_recipes', to: 'recipes#public_recipes', as: 'public_recipes'
+  get 'public_recipes', to: 'public_recipes#index'
 end
