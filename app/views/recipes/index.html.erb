@@ -1,3 +1,11 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <div class="navbar">
+        <a href="#">Dashboard</a>
+        <a href="#">Recipes</a>
+        <a href="#">Public Recipes</a>
+    </div>
+
 <%= form_with model: @recipe, url: recipes_path do |form| %>
   <div class="field">
     <%= form.label :name %>
