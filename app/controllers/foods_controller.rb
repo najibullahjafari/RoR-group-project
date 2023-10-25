@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: [:destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :set_food, only: [:destroy]
+  # before_action :set_food, only: [:destroy]
+  # before_action :authenticate_user!
 
   def index
     @foods = current_user.foods
@@ -8,6 +9,8 @@ class FoodsController < ApplicationController
   end
 
   def show
+    @food = Food.find(params[:id])
+    redirect_to foods_path
   end
 
   def create
@@ -22,11 +25,26 @@ class FoodsController < ApplicationController
     end
   end
 
-   def destroy
-    food_targeted = Food.find(params[:id])
-    return unless food_targeted.destroy
-    redirect_to foods_path
+  def destroy
+    @food = Food.find(params[:id])
+    if @food.destroy
+      redirect_to foods_path, notice: 'Food item was successfully deleted.'
+    else
+      flash[:alert] = 'Failed to delete food item.'
+      redirect_to foods_path
+    end
   end
+
+  def delete
+    @food = current_user.foods.find(params[:id])
+    if @food.destroy
+      redirect_to foods_path, notice: 'Food was successfully deleted.'
+    else
+      redirect_to foods_path, alert: 'Food deletion failed.'
+    end
+  end
+
+
 
   private
 
