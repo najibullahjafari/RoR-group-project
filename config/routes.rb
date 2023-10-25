@@ -11,7 +11,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :foods
+  # config/routes.rb
+
+    resources :foods
+
+
+
+
   resources :recipes
 
   get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'

@@ -1,0 +1,18 @@
+<!-- app/views/recipes/index.html.erb -->
+
+<h1>Your Recipes</h1>
+
+<% @recipes.each do |recipe| %>
+  <div class="recipe">
+    <h2><%= link_to recipe.name, recipe %></h2>
+    <p>Preparation Time: <%= recipe.preparation_time %> minutes</p>
+    <p>Cooking Time: <%= recipe.cooking_time %> minutes</p>
+    <p>Description: <%= recipe.description %></p>
+
+    <% if current_user == recipe.user %>
+      <%= link_to 'Delete', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to 'New Recipe', new_recipe_path %>
