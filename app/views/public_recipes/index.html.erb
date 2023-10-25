@@ -5,8 +5,7 @@
   <% @recipes.each do |recipe| %>
     <% if recipe.public == true %>
       <div>
-        <h1><%= recipe.id %></h1>
-        <h1><%= recipe.name %></h1>
+        <h3><%= recipe.name %></h3>
         <p>Description: <%= recipe.description %></p>
       </div>
     <% end %>
