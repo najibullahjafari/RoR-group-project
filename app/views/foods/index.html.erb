@@ -1,0 +1,24 @@
+<%= render 'form' %>
+<h2>Your Food List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Measurement Unit</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td><%= food.price %></td>
+        <td><%= food.quantity %></td>
+        <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
