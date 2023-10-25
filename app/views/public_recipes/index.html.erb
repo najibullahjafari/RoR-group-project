@@ -1,0 +1,14 @@
+<h1>Recipes</h1>
+<% if @recipes.empty? %>
+  <h2>There are no recipes created yet</h2>
+<% else %>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.public == true %>
+      <div>
+        <h1><%= recipe.id %></h1>
+        <h1><%= recipe.name %></h1>
+        <p>Description: <%= recipe.description %></p>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

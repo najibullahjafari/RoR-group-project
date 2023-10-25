@@ -1,10 +1,55 @@
+<%= form_with model: @recipe, url: recipes_path do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, name: "recipe[name]" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preparation_time %>
+    <%= form.number_field :preparation_time, name: "recipe[preparation_time]" %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :cooking_time %>
+    <%= form.number_field :cooking_time, name: "recipe[cooking_time]"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, name: "recipe[description]" %>
+  </div>
+
+<div class="field">
+  <label>
+    <%= form.radio_button :true, true, name: "recipe[public]"  %>
+    Public
+  </label>
+  <label>
+    <%= form.radio_button :false, false, name: "recipe[public]" %>
+    Private
+  </label>
+</div>
+
+
+  <div class="actions">
+    <%= form.submit 'Add Recipe' %>
+  </div>
+<% end %>
+
 <h1>Recipes</h1>
-<ul>
+<% if @recipes.empty? %>
+  <h2>There are no recipes created yet</h2>
+<% else %>
   <% @recipes.each do |recipe| %>
-    <li>
-      <h2><%= recipe.name %></h2>
+    <div>
+      <h1><%= recipe.id %></h1>
+      <h1><%= recipe.name %></h1>
       <p>Description: <%= recipe.description %></p>
-    </li>
+    </div>
+    <%= form_for recipe, method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' } do |f| %>
+  <%= f.submit 'Delete Recipe', class: 'btn btn-danger' %>
+<% end %>
+
   <% end %>
-</ul>
-</ul>
+<% end %>
