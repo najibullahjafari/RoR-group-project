@@ -1,6 +1,7 @@
 <%= render 'form' %>
 <h2>Your Food List</h2>
 <table>
+  <!-- Table headers and rows to display food items -->
   <thead>
     <tr>
       <th>Name</th>
@@ -11,13 +12,16 @@
     </tr>
   </thead>
   <tbody>
+    <!-- Loop through @foods to display food items -->
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.name %></td>
         <td><%= food.measurement_unit %></td>
         <td><%= food.price %></td>
         <td><%= food.quantity %></td>
-        <td><%= link_to 'Delete', food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Delete', foods_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>

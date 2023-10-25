@@ -1,10 +1,13 @@
 class FoodsController < ApplicationController
-  before_action :set_food, only: [:show, :destroy]
+  before_action :set_food, only: [:destroy]
   before_action :authenticate_user!
 
   def index
     @foods = current_user.foods
     @food = current_user.foods.build
+  end
+
+  def show
   end
 
   def create
@@ -19,16 +22,14 @@ class FoodsController < ApplicationController
     end
   end
 
-  def destroy
-    @food.destroy
-    respond_to do |format|
-      format.html { redirect_to foods_path, notice: 'Food was successfully removed.' }
-    end
+   def destroy
+    food_targeted = Food.find(params[:id])
+    return unless food_targeted.destroy
+    redirect_to foods_path
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_food
     @food = current_user.foods.find(params[:id])
   end
