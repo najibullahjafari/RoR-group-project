@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 end
 
   get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'
-  get 'public_recipes', to: 'recipes#public_recipes', as: 'public_recipes'
+  get 'public_recipes', to: 'public_recipes#index', as: 'public_recipes'
 
   get 'new_food', to: 'foods#new', as: 'custom_new_food'
   get 'new_recipe', to: 'recipes#new', as: 'custom_new_recipe'
