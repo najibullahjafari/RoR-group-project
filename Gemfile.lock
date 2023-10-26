@@ -318,7 +318,7 @@ DEPENDENCIES
   active_model_serializers
   bogus
   bootsnap
-  bootstrap
+  bootstrap (~> 5.1)
   cancancan
   capybara
   debug
