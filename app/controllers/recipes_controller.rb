@@ -27,6 +27,16 @@ class RecipesController < ApplicationController
     end
   end
 
+  def toggle_privacy
+    @recipe = Recipe.find(params[:id])
+    if @recipe.user == current_user
+      @recipe.toggle_privacy
+      redirect_to recipe_path(@recipe)
+    else
+      redirect_to root_path, alert: 'You do not have permission to do this.'
+    end
+  end
+
   private
 
   def recipe_params
