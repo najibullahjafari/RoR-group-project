@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Shopping List</h1>
+  <div>
+    <p>Amount of food items to buy: <%= @total_items %></p>
+    <p>Total value of food needed: $<%= @total_price %></p>
+  </div>
+  <table class="table table-stripped">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+  <% if @foods.present? %>
+    <% @foods.each do |food_name, food| %>
+      <% if food.present? && food[:quantity] && food[:price] %>
+        <tr>
+          <td><%= food_name %></td>
+          <td><%= food[:quantity] %></td>
+          <td>$ <%= food[:price] %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="3">No food items to buy</td>
+    </tr>
+  <% end %>
+</tbody>
+
+  </table>
+</div>

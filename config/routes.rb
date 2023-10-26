@@ -23,10 +23,12 @@ Rails.application.routes.draw do
     patch 'toggle_privacy'
   end
 end
+  get '/shopping_list', to: 'shopping_list#show'
 
-  get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'
+  # get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'
   get 'public_recipes', to: 'recipes#public_recipes', as: 'public_recipes'
 
   get 'new_food', to: 'foods#new', as: 'custom_new_food'
   get 'new_recipe', to: 'recipes#new', as: 'custom_new_recipe'
+
 end
