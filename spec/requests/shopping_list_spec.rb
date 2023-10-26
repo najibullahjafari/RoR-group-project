@@ -6,5 +6,4 @@ RSpec.describe 'ShoppingLists', type: :request do
       get '/shopping_list/show'
       expect(response).to have_http_status(:success)
     end
-  end
 end

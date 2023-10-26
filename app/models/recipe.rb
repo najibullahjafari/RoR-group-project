@@ -11,3 +11,4 @@ class Recipe < ApplicationRecord
     ingredients.count
   end
 end
+

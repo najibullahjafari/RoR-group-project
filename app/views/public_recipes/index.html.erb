@@ -7,7 +7,7 @@
   <ul>
     <% @recipes.each do |recipe| %>
       <% if recipe.public == true %>
-        <li class: "flex">
+        <li class = "flex">
           <div>
             <h3><%= link_to recipe.name, recipe %></h3>
             <p>Posted by: <%= recipe.user.name.presence || 'Masuma Jaffery' %></p>
