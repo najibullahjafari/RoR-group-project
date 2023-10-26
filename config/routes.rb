@@ -13,11 +13,9 @@ Rails.application.routes.draw do
 
   # config/routes.rb
 
-    resources :foods
-
-
-
-
+  resources :foods do
+    delete 'delete_food', on: :member   
+  end
   resources :recipes
 
   get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'
