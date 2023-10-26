@@ -3,8 +3,7 @@ class Recipe < ApplicationRecord
   has_many :recipe_foods
 
   def toggle_privacy
-    self.public = !self.public
-    self.save
+    self.public = !public
+    save
   end
-
 end

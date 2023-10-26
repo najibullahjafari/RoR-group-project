@@ -3,7 +3,7 @@ class PublicRecipesController < ApplicationController
     @recipes = Recipe.where(public: true)
 
     respond_to do |format|
-      format.html 
+      format.html
       format.json { render json: @recipes }
     end
   end
