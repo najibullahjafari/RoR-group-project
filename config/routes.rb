@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     authenticated :user do
-      root to: "recipes#index", as: :authenticated_root
+      root to: "home#index", as: :authenticated_root
     end
 
     unauthenticated do
@@ -11,9 +11,17 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :foods
-  resources :recipes, only: [:index, :create, :destroy]
-  
+  # config/routes.rb
 
-  get 'public_recipes', to: 'public_recipes#index'
+    resources :foods do
+      delete 'delete_food', on: :member
+    end
+
+
+
+
+  resources :recipes
+
+  get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'
+  get 'public_recipes', to: 'recipes#public_recipes', as: 'public_recipes'
 end
