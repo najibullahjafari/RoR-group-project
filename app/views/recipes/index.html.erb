@@ -1,62 +1,22 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <div class="navbar">
-        <a href="#">Dashboard</a>
-        <a href="http://127.0.0.1:3000/recipes">Recipes</a>
-        <a href="http://127.0.0.1:3000/public_recipes">Public Recipes</a>
-    </div>
+<h1 class = "text-center">Recipes</h1>
 
-<%= form_with model: @recipe, url: recipes_path do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, name: "recipe[name]" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :preparation_time %>
-    <%= form.number_field :preparation_time, name: "recipe[preparation_time]" %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :cooking_time %>
-    <%= form.number_field :cooking_time, name: "recipe[cooking_time]"%>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, name: "recipe[description]" %>
-  </div>
-
-<div class="field">
-  <label>
-    <%= form.radio_button :true, true, name: "recipe[public]"  %>
-    Public
-  </label>
-  <label>
-    <%= form.radio_button :false, false, name: "recipe[public]" %>
-    Private
-  </label>
-</div>
-
-
-  <div class="actions">
-    <%= form.submit 'Add Recipe' %>
-  </div>
-<% end %>
-
-<h1>Recipes</h1>
 <% if @recipes.empty? %>
   <h2>There are no recipes created yet</h2>
 <% else %>
-  <% @recipes.each do |recipe| %>
-    <div>
-      <h3><%= recipe.name %></h3>
-      <p>Description: <%= recipe.description %></p>
-    </div>
-    <%= form_for recipe, method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' } do |f| %>
-  <%= f.submit 'Delete Recipe', class: 'btn btn-danger' %>
-<% end %>
-
-  <% end %>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li class = "flex">
+        <div>
+        <h3><%= link_to recipe.name, recipe %></h3>
+        <%= link_to 'Delete Recipe', recipe, method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class: 'btn btn-success', remote: true %>
+        </div>
+        <div>
+        <label>Description:</label>
+        <p><%= recipe.description %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
