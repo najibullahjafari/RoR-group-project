@@ -16,8 +16,6 @@ Rails.application.routes.draw do
   end
 
 
-
-
   resources :recipes do
   member do
     patch 'toggle_privacy'
