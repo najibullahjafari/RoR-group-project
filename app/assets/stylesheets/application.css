@@ -48,3 +48,15 @@ form {
     background-color: #45a049;
   }
 
+ul li {
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 1rem;
+  gap: 10%;
+  padding: 1rem;
+}

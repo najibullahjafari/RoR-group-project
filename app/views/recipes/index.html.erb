@@ -1,18 +1,22 @@
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-
 <h1>Recipes</h1>
+
 <% if @recipes.empty? %>
   <h2>There are no recipes created yet</h2>
 <% else %>
-  <% @recipes.each do |recipe| %>
-    <div>
-      <p>Description: <%= recipe.description %></p>
-    </div>
-    <%= form_for recipe, class: "form-1", method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' } do |f| %>
-     <h3><%= recipe.name %></h3>
-  <%= f.submit 'Delete Recipe', class: 'btn btn-danger' %>
-<% end %>
-
-  <% end %>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li class = "flex">
+        <div>
+        <h3><%= link_to recipe.name, recipe %></h3>
+        <%= link_to 'Delete Recipe', recipe, method: :delete, data: { confirm: 'Are you sure you want to delete this recipe?' }, class: 'btn btn-success', remote: true %>
+        </div>
+        <div>
+        <label>Description:</label>
+        <p><%= recipe.description %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
