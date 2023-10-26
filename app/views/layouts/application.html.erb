@@ -14,6 +14,37 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <%= link_to 'Home', authenticated_root_path  %>
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <%= link_to 'Foods', foods_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Recipes', recipes_path, class: 'nav-link' %>
+        </li>
+         <li class="nav-item">
+         <%= link_to 'Shopping List', general_shopping_list_path, class: 'nav-link' %>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav">
+        <% if Recipe.any? %>
+  <li class="nav-item">
+    <%= link_to 'Public Recipes', public_recipes_path, class: 'nav-link' %>
+  </li>
+<% end %>
+
+          <li class="nav-item">
+            <%= link_to 'Add Food', new_food_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Add Recipe', new_recipe_path, class: 'nav-link' %>
+          </li>
+      </ul>
+    </nav>
+
     <div class="container">
       <%= flash[:alert] %>
       <%= flash[:notice] %>

@@ -11,17 +11,20 @@ Rails.application.routes.draw do
     end
   end
 
-  # config/routes.rb
-
-    resources :foods do
-      delete 'delete_food', on: :member
-    end
+  resources :foods do
+    delete 'delete_food', on: :member
+  end
 
 
+  resources :recipes do
+  member do
+    patch 'toggle_privacy'
+  end
+end
 
+get 'general_shopping_list', to: 'shopping_list#index'
+  get 'public_recipes', to: 'public_recipes#index', as: 'public_recipes'
 
-  resources :recipes
-
-  get 'shopping_list', to: 'foods#shopping_list', as: 'shopping_list'
-  get 'public_recipes', to: 'recipes#public_recipes', as: 'public_recipes'
+  get 'new_food', to: 'foods#new', as: 'custom_new_food'
+  get 'new_recipe', to: 'recipes#new', as: 'custom_new_recipe'
 end

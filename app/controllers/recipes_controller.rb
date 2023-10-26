@@ -5,6 +5,10 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def new
+    @recipe = Recipe.new
+  end
+
   def show
     @recipe = Recipe.find(params[:id])
   end
@@ -24,6 +28,16 @@ class RecipesController < ApplicationController
       redirect_to recipes_path, flash: { success: 'Recipe deleted successfully!' }
     else
       redirect_to recipes_path, flash: { error: 'Failed to delete the recipe!' }
+    end
+  end
+
+  def toggle_privacy
+    @recipe = Recipe.find(params[:id])
+    if @recipe.user == current_user
+      @recipe.toggle_privacy
+      redirect_to recipe_path(@recipe)
+    else
+      redirect_to root_path, alert: 'You do not have permission to do this.'
     end
   end
 

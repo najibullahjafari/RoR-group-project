@@ -1,0 +1,41 @@
+<%= form_with model: @recipe, url: recipes_path, local: true, class: 'my-3' do |form| %>
+  <h2 class="mb-3">Add Recipe</h2>
+  <div class="field">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, name: "recipe[name]", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preparation_time, class: 'form-label' %>
+    <%= form.number_field :preparation_time, name: "recipe[preparation_time]", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cooking_time, class: 'form-label' %>
+    <%= form.number_field :cooking_time, name: "recipe[cooking_time]", class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: 'form-label' %>
+    <%= form.text_area :description, name: "recipe[description]", class: 'form-control' %>
+  </div>
+
+ <div class="field">
+  <div class="form-check">
+    <%= form.radio_button :public, true, name: "recipe[public]", class: 'form-check-input' %>
+    <label class="form-check-label">
+      Public
+    </label>
+  </div>
+  <div class="form-check">
+    <%= form.radio_button :public, false, name: "recipe[public]", class: 'form-check-input' %>
+    <label class="form-check-label">
+      Private
+    </label>
+  </div>
+</div>
+
+  <div class="actions">
+    <%= form.submit 'Add Recipe', class: 'btn btn-primary' %>
+  </div>
+<% end %>

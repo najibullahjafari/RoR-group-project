@@ -1,0 +1,10 @@
+<% if @recipe.user == current_user %>
+  <%= link_to 'Delete Recipe', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<h1><%= @recipe.name %></h1>
+<p><%= @recipe.description %></p>
+
+<% if @recipe.user == current_user %>
+  <%= link_to 'Make Public', toggle_privacy_recipe_path(@recipe), method: :patch %>
+<% end %>

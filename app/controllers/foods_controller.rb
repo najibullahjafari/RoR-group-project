@@ -1,7 +1,9 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!, :set_food, only: [:destroy]
-  # before_action :set_food, only: [:destroy]
-  # before_action :authenticate_user!
+
+  def new
+    @food = Food.new
+  end
 
   def index
     @foods = current_user.foods
