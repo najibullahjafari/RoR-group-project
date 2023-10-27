@@ -6,7 +6,7 @@ class ShoppingListController < ApplicationController
     @total_price = 0
     @recipe_foods = []
 
-    @user.recipes.each do |recipe|
+    @user.recipes.includes(recipe_foods: :food).each do |recipe|
       # Assuming you have a many-to-many relationship between Recipe and RecipeFood
       recipe.recipe_foods.each do |recipe_food|
         @total_foods += 1
