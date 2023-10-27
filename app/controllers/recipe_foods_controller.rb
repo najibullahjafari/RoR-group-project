@@ -1,11 +1,12 @@
 class RecipeFoodsController < ApplicationController
-  before_action :set_recipe_food, only: [:show, :destroy]
+  before_action :set_recipe_food, only: %i[show destroy]
 
   def index
     @recipe_foods = RecipeFood.all
   end
 
   def show
+    @recipe_foods = RecipeFood.where(recipe_id: params[:id])
   end
 
   def new

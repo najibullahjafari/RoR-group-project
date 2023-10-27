@@ -1,6 +1,6 @@
 class ShoppingListController < ApplicationController
   before_action :find_user
-   def index
+  def index
     @user = current_user
     @total_foods = 0
     @total_price = 0

@@ -4,14 +4,14 @@
   box-sizing: border-box;
 }
 
-/* form {
+form {
   max-width: 30rem;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   border: 1px solid #8f8888;
   border-radius: 5px;
-} */
+}
 
 label {
   display: block;
