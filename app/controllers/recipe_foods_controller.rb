@@ -7,7 +7,7 @@ class RecipeFoodsController < ApplicationController
 
   def show
     @recipe_foods = RecipeFood.where(recipe_id: params[:id]).includes(:food, :measurement_unit)
-  end  
+  end
 
   def new
     @recipe_food = RecipeFood.new
