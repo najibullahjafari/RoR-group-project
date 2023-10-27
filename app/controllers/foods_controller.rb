@@ -6,10 +6,10 @@ class FoodsController < ApplicationController
   end
 
   def index
-      @foods = current_user.foods.includes(:ingredients, :categories)
-      @food = current_user.foods.build
+    @foods = current_user.foods.includes(:ingredients)
+    @food = current_user.foods.build
   end
-    
+
   def show
     @food = Food.find(params[:id])
     redirect_to foods_path
