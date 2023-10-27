@@ -6,7 +6,7 @@ class FoodsController < ApplicationController
   end
 
   def index
-    @foods = current_user.foods
+    @foods = current_user.foods.includes(:ingredients)
     @food = current_user.foods.build
   end
 
