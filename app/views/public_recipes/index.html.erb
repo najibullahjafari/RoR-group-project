@@ -12,6 +12,11 @@
             <h3><%= link_to recipe.name, recipe %></h3>
             <p>Posted by: <%= recipe.user.name.presence || 'Masuma Jaffery' %></p>
           </div>
+          <div>
+  <h3>Total Food Items: <%= @total_foods %></h3>
+  <p>Total Food Price: $<%= @total_price %></p>
+</div>
+
         </li>
       <% end %>
     <% end %>
