@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Food, type: :model do
   before do
-    @user = User.create(name: 'paloma malevola', email: 'paloma_malevola@mail.com', password: 'palomapaloma')
-    @egg = Food.create(name: 'egg', measurement_unit: 'piece', price: '3', quantity: 1, user: @user)
-    @onion = Food.create(name: 'onion', measurement_unit: 'piece', price: '2', quantity: 1, user: @user)
+    @user = User.create(name: 'Najib', email: 'najib@gmail.com', password: 'naji345')
+    @egg = Food.create(name: 'egg', measurement_unit: 'kilogram', price: 3, quantity: 1, user: @user)
+    @rice = Food.create(name: 'rice', measurement_unit: 'kg', price: 200, quantity: 1, user: @user)
   end
 
   it 'measurement_unit should be present' do
