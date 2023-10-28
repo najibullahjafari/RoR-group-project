@@ -66,9 +66,9 @@ group :development, :test do
   gem 'regexp_parser', '2.8.1'
   gem 'rspec-rails', '~> 5.0'
   gem 'rswag'
+  gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false
   gem 'webdrivers'
-  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do

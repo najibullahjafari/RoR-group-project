@@ -9,9 +9,9 @@ RSpec.describe FoodsController, type: :controller do
     context 'with valid attributes' do
       it 'creates a new food' do
         sign_in user
-        expect {
+        expect do
           post :create, params: { food: attributes_for(:food) }
-        }.to change(Food, :count).by(1)
+        end.to change(Food, :count).by(1)
       end
 
       it 'redirects to foods index' do
@@ -24,9 +24,9 @@ RSpec.describe FoodsController, type: :controller do
     context 'with invalid attributes' do
       it 'does not create a new food' do
         sign_in user
-        expect {
+        expect do
           post :create, params: { food: attributes_for(:food, name: nil) }
-        }.to change(Food, :count)
+        end.to change(Food, :count)
       end
     end
   end
@@ -34,7 +34,7 @@ RSpec.describe FoodsController, type: :controller do
   describe 'GET #index' do
     it 'assigns @foods' do
       sign_in user
-      food = create(:food, user: user)
+      food = create(:food, user:)
       get :index
       expect(assigns(:foods)).to eq([food])
     end
@@ -43,7 +43,7 @@ RSpec.describe FoodsController, type: :controller do
   describe 'GET #show' do
     it 'redirects to foods path' do
       sign_in user
-      food = create(:food, user: user)
+      food = create(:food, user:)
       get :show, params: { id: food.id }
       expect(response).to redirect_to(foods_path)
     end
@@ -52,11 +52,10 @@ RSpec.describe FoodsController, type: :controller do
   describe 'DELETE #destroy' do
     it 'destroys the requested food' do
       sign_in user
-      food_to_delete = create(:food, user: user)
-      expect {
+      food_to_delete = create(:food, user:)
+      expect do
         delete :destroy, params: { id: food_to_delete.id }
-      }.to change(Food, :count).by(-1)
+      end.to change(Food, :count).by(-1)
     end
   end
-
 end

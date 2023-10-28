@@ -13,11 +13,10 @@ RSpec.describe 'recipes/show', type: :view do
     expect(rendered).to have_content("#{@recipe.cooking_time} hours")
   end
 
-
   it 'displays ingredient list' do
     @recipe.recipe_foods.each do |recipe_food|
       expect(rendered).to have_content(recipe_food.food.name)
-      expect(rendered).to have_content("#{recipe_food.quantity}")
+      expect(rendered).to have_content(recipe_food.quantity.to_s)
       if recipe_food.food.price.present? && recipe_food.quantity.present?
         expect(rendered).to have_content("$#{recipe_food.food.price * recipe_food.quantity}")
       else
