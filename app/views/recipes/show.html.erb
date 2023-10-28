@@ -5,12 +5,6 @@
       <p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> minutes</p>
     </div>
     <div class="col-md-6">
-      <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> hours</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-6">
       <p><strong>Privacy:</strong>
         <%= form_for @recipe, url: toggle_privacy_recipe_path(@recipe), method: :patch do |f| %>
           <%= f.submit(@recipe.public? ? 'Make Private' : 'Make Public', class: 'btn btn-sm btn-toggle') %>
@@ -20,6 +14,9 @@
   </div>
 
   <div class="row">
+    <div class="col-md-6">
+      <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> hours</p>
+    </div>
     <div class="col-md-6">
       <%= link_to 'Generate Shopping List', general_shopping_list_path, class: 'btn btn-primary' %>
       <%= link_to 'Add Ingredients', new_recipe_food_path, class: 'btn btn-success' %>
@@ -37,23 +34,22 @@
       </tr>
     </thead>
     <tbody>
-  <% @recipe.recipe_foods.each do |recipe_food| %>
-    <tr>
-      <td><%= recipe_food.food.name %></td>
-<td><%= recipe_food.quantity %></td>
-<td>
-  <% if recipe_food.food.price.present? && recipe_food.quantity.present? %>
-    $<%= recipe_food.food.price * recipe_food.quantity %>
-  <% else %>
-    Price unavailable
-  <% end %>
-</td>
-<td>
-  <%= button_to 'Delete', recipe_food, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-</td>
-
-  <% end %>
-</tbody>
-
+      <% @recipe.recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.quantity %></td>
+          <td>
+            <% if recipe_food.food.price.present? && recipe_food.quantity.present? %>
+              $<%= recipe_food.food.price * recipe_food.quantity %>
+            <% else %>
+              Price unavailable
+            <% end %>
+          </td>
+          <td>
+            <%= button_to 'Delete', recipe_food, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
