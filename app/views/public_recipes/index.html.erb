@@ -1,0 +1,22 @@
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<h1 class = "text-center">Public Recipes</h1>
+
+<% if @recipes.empty? %>
+  <h2>There are no recipes created yet</h2>
+<% else %>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <% if recipe.public == true %>
+        <li class = "flex">
+          <div>
+            <h3><%= link_to recipe.name, recipe %></h3>
+            <p>Posted by: <%= recipe.user.name.presence || 'Masuma Jaffery' %></p>
+          </div>
+          <div>
+</div>
+
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

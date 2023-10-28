@@ -1,0 +1,58 @@
+<div class="container">
+  <h1><%= @recipe.name %></h1>
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Preparation Time:</strong> <%= @recipe.preparation_time %> minutes</p>
+    </div>
+    <div class="col-md-6">
+      <p><strong>Privacy:</strong>
+        <%= form_for @recipe, url: toggle_privacy_recipe_path(@recipe), method: :patch do |f| %>
+          <div class="form-check toggle_btn form-switch">
+            <%= f.label :public, @recipe.public ? "Private" : "Public", class: "form-check-label", for: "public-toggle" %>
+            <%= f.check_box :public, class: "form-check-input", id: "public-toggle", onchange: "this.form.submit()" %>
+          </div>
+        <% end %>
+      </p>
+    </div>
+  </div>
+<div class="col-md-6">
+      <p><strong>Cooking Time:</strong> <%= @recipe.cooking_time %> hours</p>
+    </div>
+  <div class="row">
+    
+    <div class="col-md-6  margin_f">
+      <%= link_to 'Generate Shopping List', general_shopping_list_path, class: 'btn btn-primary float-start' %>
+      <%= link_to 'Add Ingredients', new_recipe_food_path, class: 'btn btn-success' %>
+    </div>
+  </div>
+
+  <h2>Ingredients</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.quantity %></td>
+          <td>
+            <% if recipe_food.food.price.present? && recipe_food.quantity.present? %>
+              $<%= recipe_food.food.price * recipe_food.quantity %>
+            <% else %>
+              Price unavailable
+            <% end %>
+          </td>
+          <td>
+            <%= button_to 'Delete', recipe_food, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

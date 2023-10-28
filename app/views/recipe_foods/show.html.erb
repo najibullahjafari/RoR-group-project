@@ -1,0 +1,29 @@
+<h1>Recipe Foods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>Recipe</th>
+      <th>Food</th>
+      <th>Measurement Unit</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipe_foods.each do |recipe_food| %>
+      <tr>
+        <td><%= recipe_food.quantity %></td>
+        <td><%= recipe_food.recipe.name %></td>
+        <td><%= recipe_food.food.name %></td>
+        <td><%= recipe_food.measurement_unit.name %></td>
+        <td><%= link_to 'Show', recipe_food %></td>
+        <td><%= link_to 'Edit', edit_recipe_food_path(recipe_food) %></td>
+        <td><%= link_to 'Destroy', recipe_food, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Recipe Food', new_recipe_food_path %>
