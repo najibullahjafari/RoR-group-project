@@ -60,3 +60,8 @@ ul li {
 .toggle_btn {
   border: none;
 }
+
+.margin_f {
+  display: flex;
+  justify-content: space-between;
+}
