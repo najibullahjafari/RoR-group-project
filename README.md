@@ -135,10 +135,6 @@ bundle exec rspec ./spec/features
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-```sh
-  cd my-folder
-git@github.com:najibullahjafari/RoR-group-project.git
-```
 
 ### Install
 
