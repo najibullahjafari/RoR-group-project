@@ -19,7 +19,7 @@ class ShoppingListController < ApplicationController
         @total_price += price
 
         # Add to the recipe_foods array
-        @recipe_foods << { food: recipe_food.food, quantity: quantity, price: price }
+        @recipe_foods << { food: recipe_food.food, quantity:, price: }
       end
     end
   end
