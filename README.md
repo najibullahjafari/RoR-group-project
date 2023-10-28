@@ -134,31 +134,14 @@ bundle exec rspec ./spec/features
 
 ```
 
-### Deployment
-
-The deployment will be available soon !
-
-<!--
-Example:
-You can deploy this project using:
-
-```sh
-
-```
- -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-```sh
-  cd my-folder
-git@github.com:cancelei/blog-in-rails.git
-```
 
 ### Install
 
 Install this project with:
 
 ```sh
-  cd blog-app
+  cd RoR-group-project
   bundle install
 ```
 
@@ -169,49 +152,6 @@ Setting up the Data Base:
   rails db:migrate
   rails db:seed
 ```
-
-### Usage
-
-To run the project, execute the following command:
-
-```sh
-  rails server
-```
-
-### Run tests
-
-<!-- Test are under construction, but we expect to have them completed soon! -->
-
-Before running tests, ensure you've set up the test database:
-
-```sh
-bin/rails db:migrate RAILS_ENV=test
-```
-
-**Note:** Given that the aim of this project is to test the application's UI, to see if it works without side effects. We have therefore had to modify the contents of certain files, which could have the effect of falsifying certain `Unit` tests.
-We therefore recommend that, rather than running all the tests, you only test the `features` folder and run
-
-```sh
-bundle exec rspec ./spec/features
-
-```
-
-### Deployment
-
-The deployment will be available soon !
-
-<!--
-Example:
-You can deploy this project using:
-
-```sh
-
-```
- -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -229,14 +169,6 @@ You can deploy this project using:
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-1. Add a beautifull UI
-2. Add an endpoint for our API
-
-> We this project can improve, we are planning to include the next features soon:
 
 <!-- FUTURE FEATURES -->
 
@@ -260,7 +192,7 @@ You can deploy this project using:
 - [x] **View Implementation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- CONTRIBUTING -->
 
@@ -290,31 +222,6 @@ I would like to thank Microverse for suggestion this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Learn more about FAQ below:
-
-- **How do I fix Linters errors if I modify the project?**
-
-  - for rubocop run
-
-  ```sh
-  rubocop -A
-  ```
-
-  - for Stylint run:
-
-  ```sh
-  npx stylelint "**/*.{css,scss}" --fix
-  ```
-
-  I would like to thank Microverse for suggestion this project.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
