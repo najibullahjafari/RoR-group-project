@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   let(:user) { User.create(name: 'Example User', email: 'user@example.com', password: 'password') }
-  let(:recipe) { Recipe.create(user: user) }
+  let(:recipe) { Recipe.create(user:) }
 
   it 'belongs to a user' do
     expect(recipe.user).to eq(user)

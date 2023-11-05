@@ -69,7 +69,6 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'simplecov', require: false
   gem 'webdrivers'
-  gem 'shoulda-matchers', '~> 5.0'
 end
 
 group :development do
@@ -88,3 +87,4 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
+gem 'database_cleaner'
