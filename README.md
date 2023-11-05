@@ -11,7 +11,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Blog App ](#-blog-app-)
+- [📖 Ruby on Rails group project ](#ruby-on-rails-group-project)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -21,7 +21,6 @@
     - [Install](#install)
     - [Usage](#usage)
     - [Run tests](#run-tests)
-    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -32,7 +31,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Ruby on Rails group project<a name="about-project"></a>
+# 📖 Ruby on Rails group project<a name="ruby-on-rails-group-project"></a>
 
 **Ruby on Rails group project** 
 The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them.
@@ -134,31 +133,14 @@ bundle exec rspec ./spec/features
 
 ```
 
-### Deployment
-
-The deployment will be available soon !
-
-<!--
-Example:
-You can deploy this project using:
-
-```sh
-
-```
- -->
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-```sh
-  cd my-folder
-git@github.com:cancelei/blog-in-rails.git
-```
 
 ### Install
 
 Install this project with:
 
 ```sh
-  cd blog-app
+  cd RoR-group-project
   bundle install
 ```
 
@@ -169,49 +151,6 @@ Setting up the Data Base:
   rails db:migrate
   rails db:seed
 ```
-
-### Usage
-
-To run the project, execute the following command:
-
-```sh
-  rails server
-```
-
-### Run tests
-
-<!-- Test are under construction, but we expect to have them completed soon! -->
-
-Before running tests, ensure you've set up the test database:
-
-```sh
-bin/rails db:migrate RAILS_ENV=test
-```
-
-**Note:** Given that the aim of this project is to test the application's UI, to see if it works without side effects. We have therefore had to modify the contents of certain files, which could have the effect of falsifying certain `Unit` tests.
-We therefore recommend that, rather than running all the tests, you only test the `features` folder and run
-
-```sh
-bundle exec rspec ./spec/features
-
-```
-
-### Deployment
-
-The deployment will be available soon !
-
-<!--
-Example:
-You can deploy this project using:
-
-```sh
-
-```
- -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -229,14 +168,6 @@ You can deploy this project using:
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-1. Add a beautifull UI
-2. Add an endpoint for our API
-
-> We this project can improve, we are planning to include the next features soon:
 
 <!-- FUTURE FEATURES -->
 
@@ -260,7 +191,7 @@ You can deploy this project using:
 - [x] **View Implementation**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 <!-- CONTRIBUTING -->
 
@@ -290,31 +221,6 @@ I would like to thank Microverse for suggestion this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
-
-## ❓ FAQ (OPTIONAL) <a name="faq"></a>
-
-> Learn more about FAQ below:
-
-- **How do I fix Linters errors if I modify the project?**
-
-  - for rubocop run
-
-  ```sh
-  rubocop -A
-  ```
-
-  - for Stylint run:
-
-  ```sh
-  npx stylelint "**/*.{css,scss}" --fix
-  ```
-
-  I would like to thank Microverse for suggestion this project.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 

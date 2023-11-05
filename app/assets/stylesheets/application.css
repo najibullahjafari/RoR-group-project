@@ -56,3 +56,12 @@ ul li {
   gap: 10%;
   padding: 1rem;
 }
+
+.toggle_btn {
+  border: none;
+}
+
+.margin_f {
+  display: flex;
+  justify-content: space-between;
+}

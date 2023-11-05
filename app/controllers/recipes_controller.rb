@@ -24,6 +24,12 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
+
+    unless @recipe.user == current_user
+      redirect_to recipes_path, flash: { error: 'You are not authorized to perform this action.' }
+      return
+    end
+
     if @recipe.destroy
       redirect_to recipes_path, flash: { success: 'Recipe deleted successfully!' }
     else

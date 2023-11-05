@@ -13,5 +13,6 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: RoR_group_project_production
   url: <%= ENV['DATABASE_URL'] %>
