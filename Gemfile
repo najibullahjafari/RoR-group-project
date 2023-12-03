@@ -87,3 +87,5 @@ group :test do
   gem 'selenium-webdriver'
 end
 gem 'database_cleaner'
+
+gem "tailwindcss-rails", "~> 2.0"
