@@ -38,7 +38,7 @@ gem 'jbuilder'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
+gem 'devise'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 gem 'bootstrap', '5.1.0'
@@ -53,7 +53,6 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   # Add RSpec for testing
-  gem 'devise'
   gem 'factory_bot_rails'
 
   # Add gem for controller Testing.
