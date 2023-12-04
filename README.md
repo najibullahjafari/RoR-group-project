@@ -107,6 +107,11 @@ Setting up the Data Base:
   rails db:seed
 ```
 
+
+### Deployment 
+
+https://ricas-recetas.onrender.com/
+
 ### Usage
 
 To run the project, execute the following command:
